@@ -1,0 +1,87 @@
+<% layout("layouts/boilerplate") %>
+
+<div class="row">
+  <h1 class="text-center">Add a New Campground</h1>
+  <div class="col-6 offset-3">
+    <p>Enter the campground's details below!</p>
+    <form
+      action="/campgrounds"
+      method="post"
+      novalidate
+      class="needs-validation"
+    >
+      <div class="mb-4">
+        <label class="form-label" for="title">Title:</label>
+        <input
+          class="form-control"
+          type="text"
+          name="campground[title]"
+          required
+          id="title"
+        />
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Please enter a campground name.</div>
+      </div>
+
+      <div class="mb-4">
+        <label class="form-label" for="description">Description:</label>
+        <textarea
+          class="form-control"
+          name="campground[description]"
+          required
+          id="description"
+          cols="30"
+          rows="10"
+        ></textarea>
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Please enter a description.</div>
+      </div>
+
+      <div class="mb-4">
+        <label class="form-label" for="location">Location:</label>
+        <input
+          class="form-control"
+          type="text"
+          name="campground[location]"
+          required
+          id="location"
+        />
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Please enter a location.</div>
+      </div>
+
+      <div class="input-group mb-3"></div>
+      <div class="mb-3">
+        <label class="form-label" for="price">Price:</label>
+        <input
+          required
+          class="form-control"
+          type="number"
+          name="campground[price]"
+          id="price"
+          placeholder="$0.00"
+        />
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Please enter a price.</div>
+      </div>
+
+      <div class="mb-4 has-validation">
+        <label class="form-label" for="image">Image URL:</label>
+        <input
+          class="form-control"
+          type="text"
+          value="https://random.imagecdn.app/600/600"
+          name="campground[image]"
+          required
+          id="image"
+        />
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Please enter an image URL.</div>
+      </div>
+      <div class="mb-3">
+        <button class="btn bg-success">Submit</button>
+      </div>
+    </form>
+    <a href="/campgrounds">Cancel</a>
+  </div>
+</div>
